@@ -7,7 +7,7 @@
     </a>
 </li>
 
-{{-- <li class="nav-item">
+<li class="nav-item">
     <a href="{{ route('admin.adminUsers.index') }}"
         class="nav-link {{ Request::is('admin/adminUsers*') ? 'active' : '' }}">
         <span class="mr-2 brand-image"><i class="fas fa-users-cog"></i></span>
@@ -23,7 +23,7 @@
     </a>
 </li>
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="{{ route('admin.marqueeInfos.index') }}"
        class="nav-link {{ Request::is('admin/marqueeInfos*') ? 'active' : '' }}">
        <span class="mr-2 brand-image"><i class="fas fa-bullhorn"></i></span>
