@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::any('/clear-cache', function () {
+    Artisan::call('optimize:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    // return "All Cache is cleared";
+    // $pageInfo = PageSettingInfo::getHomeBanner('/index');
+    // return view('index', ['pageInfo' => $pageInfo]);
+    return redirect()->route('index');
+});
 
 Route::get('/', function () {
     return view('index');
