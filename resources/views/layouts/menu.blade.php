@@ -29,7 +29,7 @@
        <span class="mr-2 brand-image"><i class="fas fa-bullhorn"></i></span>
         <p>跑馬燈資訊</p>
     </a>
-</li>
+</li> --}}
 
 
 <li class="nav-item">
@@ -38,4 +38,54 @@
        <span class="mr-2 brand-image"><i class="fas fa-newspaper"></i></span>
         <p>最新消息</p>
     </a>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle dropdown-tv" data-toggle="dropdown" href="javascript:void(0)"
+        role="button" aria-expanded="false">
+        <span class="mr-2 brand-image"><i class="fas fa-tv"></i></span>
+        <p>數位有線電視</p>
+    </a>
+    <ul class="dropdown-menus nav nav-pills ml-3">
+        <li class="nav-item">
+            <a href="{{ route('admin.ePGInfos.index') }}"
+                class="nav-link {{ Request::routeIs('admin.ePGInfos*') ? 'active' : '' }}">
+                <p>數位節目表管理</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href=""
+                class="nav-link">
+                <p>優惠方案</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+{{-- <li class="nav-item">
+    <a href="{{ route('admin.ePGInfos.index') }}" class="nav-link {{ Request::is('admin.ePGInfos*') ? 'active' : '' }}">
+        <span class="mr-2 brand-image"><i class="fas fa-tv"></i></span>
+        <p>數位節目表</p>
+    </a>
 </li> --}}
+
+
+@push('page_scripts')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.dropdown-menus').hide();
+
+            $('.dropdown-toggle').on('click', function() {
+                $(this).siblings('.dropdown-menus').first().toggle(1500);
+            });
+
+            $('.dropdown-menus .nav-link').each(function() {
+                if ($(this).hasClass('active')) {
+                    $(this).closest('.dropdown-menus').show();
+                    $(this).closest('.dropdown-menus').siblings('.dropdown-toggle').closest('.nav-item').show();
+                }
+            });
+        });
+    </script>
+
+@endpush

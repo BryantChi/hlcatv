@@ -112,7 +112,17 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::resource('seoSettings', App\Http\Controllers\Admin\SeoSettingController::class, ["as" => 'admin']);
         // Route::resource('marqueeInfos', App\Http\Controllers\Admin\MarqueeInfoController::class, ["as" => 'admin']);
-        // Route::resource('newsInfos', App\Http\Controllers\Admin\NewsInfoController::class, ["as" => 'admin']);
+        Route::resource('newsInfos', App\Http\Controllers\Admin\NewsInfoController::class, ["as" => 'admin']);
+        Route::resource('ePGInfos', App\Http\Controllers\Admin\EPGInfoController::class, ["as" => 'admin']);
+            // ->names([
+            //     'index' => 'admin.ePGInfos.index',
+            //     'store' => 'admin.ePGInfos.store',
+            //     'show' => 'admin.ePGInfos.show',
+            //     'update' => 'admin.ePGInfos.update',
+            //     'destroy' => 'admin.ePGInfos.destroy',
+            //     'create' => 'admin.ePGInfos.create',
+            //     'edit' => 'admin.ePGInfos.edit'
+            // ]);
 
         Route::any('adminUsers', [App\Http\Controllers\Admin\AdminAccountController::class, 'index'])->name('admin.adminUsers.index');
         Route::any('adminUsers/create', [App\Http\Controllers\Admin\AdminAccountController::class, 'create'])->name('admin.adminUsers.create');
