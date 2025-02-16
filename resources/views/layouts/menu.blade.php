@@ -54,20 +54,50 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href=""
-                class="nav-link">
+            <a href="{{ route('admin.cableTvPromotionsInfos.index') }}"
+                class="nav-link {{ Request::routeIs('admin.cableTvPromotionsInfos*') ? 'active' : '' }}">
                 <p>優惠方案</p>
             </a>
         </li>
     </ul>
 </li>
 
-{{-- <li class="nav-item">
-    <a href="{{ route('admin.ePGInfos.index') }}" class="nav-link {{ Request::is('admin.ePGInfos*') ? 'active' : '' }}">
-        <span class="mr-2 brand-image"><i class="fas fa-tv"></i></span>
-        <p>數位節目表</p>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle dropdown-internet" data-toggle="dropdown" href="javascript:void(0)"
+        role="button" aria-expanded="false">
+        <span class="mr-2 brand-image"><i class="fas fa-wifi"></i></span>
+        <p>寬頻上網</p>
     </a>
-</li> --}}
+    <ul class="dropdown-menus nav nav-pills ml-3">
+        <li class="nav-item">
+            <a href="{{ route('admin.internetPromotionsInfos.index') }}"
+                class="nav-link {{ Request::routeIs('admin.internetPromotionsInfos*') ? 'active' : '' }}">
+                <p>優惠方案</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('admin.latestAnnouncementsInfos.index') }}" class="nav-link {{ Request::routeIs('admin.latestAnnouncementsInfos*') ? 'active' : '' }}">
+        <span class="mr-2 brand-image"><i class="fas fa-bullhorn"></i></span>
+        <p>最新公告</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('admin.pdfFileDownloadInfos.index') }}" class="nav-link {{ Request::routeIs('admin.pdfFileDownloadInfos*') ? 'active' : '' }}">
+        <span class="mr-2 brand-image"><i class="fas fa-download"></i></span>
+        <p>下載專區管理</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('admin.repairInfos.index') }}" class="nav-link {{ Request::routeIs('admin.repairInfos*') ? 'active' : '' }}">
+        <span class="mr-2 brand-image"><i class="fas fa-wrench"></i></span>
+        <p>線上報修</p>
+    </a>
+</li>
 
 
 @push('page_scripts')

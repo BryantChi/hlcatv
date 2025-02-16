@@ -26,12 +26,13 @@
                     </div>
                     <div class="col-lg-8 px-lg-5 px-4 py-lg-3 py-5">
                         <div class="repair-form">
-                            <form>
+                            <form method="POST" action="{{ route('repairs.store') }}">
+                                @csrf
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <h5><span class="text-danger">*</span> 維修項目（必選）：</h5>
                                         <div class="form-floating">
-                                            <select class="form-select" id="repair-item"
+                                            <select class="form-select" id="repair-item" name="repair_item"
                                                 aria-label="Floating label select example" required>
                                                 <option selected>請選擇維修項目</option>
                                                 <option value="數位有線電視報修申請">數位有線電視報修申請</option>
@@ -43,7 +44,7 @@
                                     <div class="col-md-6">
                                         <h5><span class="text-danger">*</span> 申請人姓名（必填）：</h5>
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="姓名"
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="姓名"
                                                 required>
                                             <label for="name">姓名</label>
                                         </div>
@@ -51,7 +52,7 @@
                                     <div class="col-md-6">
                                         <h5><span class="text-danger">*</span> 申請人電話（必填）：</h5>
                                         <div class="form-floating">
-                                            <input type="tel" class="form-control" id="tel" placeholder="電話"
+                                            <input type="tel" class="form-control" id="tel" name="tel" placeholder="電話"
                                                 required>
                                             <label for="tel">電話</label>
                                         </div>
@@ -59,7 +60,7 @@
                                     <div class="col-12">
                                         <h5>電子信箱（可省略）：</h5>
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Email"
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
                                                 required>
                                             <label for="email">Email</label>
                                         </div>
@@ -70,7 +71,7 @@
                                     <div class="col-md-4">
                                         <!-- 縣市下拉選單 -->
                                         <div class="form-floating">
-                                            <select class="form-select" id="city"
+                                            <select class="form-select" id="city" name="city"
                                                 aria-label="Floating label select example" required>
                                             </select>
                                             <label for="city">縣市</label>
@@ -79,7 +80,7 @@
                                     <div class="col-md-4">
                                         <!-- 鄉鎮市區下拉選單 -->
                                         <div class="form-floating">
-                                            <select class="form-select" id="district"
+                                            <select class="form-select" id="district" name="district"
                                                 aria-label="Floating label select example" required>
                                             </select>
                                             <label for="district">鄉鎮市區</label>
@@ -87,14 +88,14 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="zipcode" placeholder="郵遞區號"
+                                            <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="郵遞區號"
                                                 required>
                                             <label for="zipcode">郵遞區號</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating2">
-                                            <input type="text" class="form-control" id="address" placeholder=""
+                                            <input type="text" class="form-control" id="address" name="address" placeholder=""
                                                 required>
                                             <!-- <label for="address"></label> -->
                                         </div>
@@ -102,7 +103,7 @@
                                     <div class="col-12">
                                         <h5><span class="text-danger">*</span> 狀況說明（必填）：</h5>
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="留言" id="message" style="height: 100px" required></textarea>
+                                            <textarea class="form-control" placeholder="留言" id="message" name="message" style="height: 100px" required></textarea>
                                             <label for="message">狀況說明</label>
                                         </div>
                                     </div>
@@ -125,7 +126,22 @@
     </div>
 @endsection
 
+@push('third_party_scripts')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@endpush
+
 @push('page_scripts')
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '成功',
+                text: '{{ session("success") }}',
+                timer: 3000,
+                showConfirmButton: false
+            });
+        </script>
+    @endif
     <script>
         $(document).ready(function() {
             // 定義資料來源的 URL

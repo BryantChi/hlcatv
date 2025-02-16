@@ -1,28 +1,30 @@
 <div class="card-body p-0">
     <div class="table-responsive">
-        <table class="table" id="e-p-g-infos-table">
+        <table class="table" id="pdf-file-download-infos-table">
             <thead>
             <tr>
-                <th>數位節目表</th>
-                <th>alt</th>
+                <th>名稱</th>
+                <th>檔案</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($ePGInfos as $ePGInfo)
+            @foreach($pdfFileDownloadInfos as $pdfFileDownloadInfo)
                 <tr>
+                    <td>{{ $pdfFileDownloadInfo->file_name }}</td>
                     <td>
-                        <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $ePGInfo->epg_img }}" style="max-width: 200px; max-height: 200px;" alt="">
+                        <a href="{{ env('APP_URL') . '/uploads/' . $pdfFileDownloadInfo->file }}" download>
+                            {{ basename($pdfFileDownloadInfo->file) }}
+                        </a>
                     </td>
-                    <td>{{ $ePGInfo->alt }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['admin.ePGInfos.destroy', $ePGInfo->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.pdfFileDownloadInfos.destroy', $pdfFileDownloadInfo->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            {{-- <a href="{{ route('admin.ePGInfos.show', [$ePGInfo->id]) }}"
+                            {{-- <a href="{{ route('admin.pdfFileDownloadInfos.show', [$pdfFileDownloadInfo->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>
                             </a> --}}
-                            <a href="{{ route('admin.ePGInfos.edit', [$ePGInfo->id]) }}"
+                            <a href="{{ route('admin.pdfFileDownloadInfos.edit', [$pdfFileDownloadInfo->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-edit"></i>
                             </a>
@@ -38,7 +40,7 @@
 
     <div class="card-footer clearfix">
         <div class="float-right">
-            @include('adminlte-templates::common.paginate', ['records' => $ePGInfos])
+            @include('adminlte-templates::common.paginate', ['records' => $pdfFileDownloadInfos])
         </div>
     </div>
 </div>

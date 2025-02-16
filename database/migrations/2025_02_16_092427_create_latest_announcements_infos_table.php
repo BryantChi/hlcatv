@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('epg_infos', function (Blueprint $table) {
+        Schema::create('latest_announcements_infos', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('epg_img')->nullable()->comment('節目表圖片');
-            $table->string('alt')->nullable()->comment('節目表圖片alt');
+            $table->string('title')->comment('標題');
+            $table->longText('content')->nullable()->comment('內容');
+            $table->longText('cover_front_image')->nullable()->comment('封面圖');
+            $table->boolean('status')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('epg_infos');
+        Schema::drop('latest_announcements_infos');
     }
 };

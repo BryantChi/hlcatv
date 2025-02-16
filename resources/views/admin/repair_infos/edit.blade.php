@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                        編輯數位節目表
+                        Edit Repair Info
                     </h1>
                 </div>
             </div>
@@ -19,17 +19,17 @@
 
         <div class="card">
 
-            {!! Form::model($ePGInfo, ['route' => ['admin.ePGInfos.update', $ePGInfo->id], 'method' => 'patch', 'files' => true]) !!}
+            {!! Form::model($repairInfo, ['route' => ['admin.repairInfos.update', $repairInfo->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">
-                    @include('admin.e_p_g_infos.fields')
+                    @include('admin.repair_infos.fields')
                 </div>
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('儲存', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('admin.ePGInfos.index') }}" class="btn btn-default"> 取消 </a>
+                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('admin.repairInfos.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}

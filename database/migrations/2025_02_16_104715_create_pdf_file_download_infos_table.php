@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('epg_infos', function (Blueprint $table) {
+        Schema::create('pdf_file_download_infos', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('epg_img')->nullable()->comment('節目表圖片');
-            $table->string('alt')->nullable()->comment('節目表圖片alt');
+            $table->longText('file');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('epg_infos');
+        Schema::drop('pdf_file_download_infos');
     }
 };

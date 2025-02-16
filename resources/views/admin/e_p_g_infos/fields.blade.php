@@ -1,6 +1,6 @@
 <!-- Epg Img Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('圖片', 'Epg Img:') !!}
+    {!! Form::label('epg_img', '圖片:') !!}
     {{-- {!! Form::text('epg_img', null, ['class' => 'form-control']) !!} --}}
     <div class="custom-file">
         <input type="file" class="custom-file-input" id="epg_img" name="epg_img" accept="image/*">

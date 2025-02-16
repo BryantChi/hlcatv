@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RepairController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -75,17 +76,19 @@ Route::get('/cable-tv-promotions-details', function () {
     return view('cable-tv-promotions-details');
 })->name('cable-tv-promotions-details');
 
-Route::get('internet-promotions', function () {
+Route::get('/internet-promotions', function () {
     return view('internet-promotions');
 })->name('internet-promotions');
 
-Route::get('internet-promotions-details', function () {
+Route::get('/internet-promotions-details', function () {
     return view('internet-promotions-details');
 })->name('internet-promotions-details');
 
 Route::get('/epg', function () {
     return view('epg');
 })->name('epg');
+
+Route::post('/repairs', [RepairController::class, 'store'])->name('repairs.store');
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -114,15 +117,10 @@ Route::prefix('admin')->group(function () {
         // Route::resource('marqueeInfos', App\Http\Controllers\Admin\MarqueeInfoController::class, ["as" => 'admin']);
         Route::resource('newsInfos', App\Http\Controllers\Admin\NewsInfoController::class, ["as" => 'admin']);
         Route::resource('ePGInfos', App\Http\Controllers\Admin\EPGInfoController::class, ["as" => 'admin']);
-            // ->names([
-            //     'index' => 'admin.ePGInfos.index',
-            //     'store' => 'admin.ePGInfos.store',
-            //     'show' => 'admin.ePGInfos.show',
-            //     'update' => 'admin.ePGInfos.update',
-            //     'destroy' => 'admin.ePGInfos.destroy',
-            //     'create' => 'admin.ePGInfos.create',
-            //     'edit' => 'admin.ePGInfos.edit'
-            // ]);
+        Route::resource('cableTvPromotionsInfos', App\Http\Controllers\Admin\CableTvPromotionsInfoController::class, ["as" => 'admin']);
+        Route::resource('internetPromotionsInfos', App\Http\Controllers\Admin\InternetPromotionsInfoController::class, ["as" => 'admin']);
+        Route::resource('latestAnnouncementsInfos', App\Http\Controllers\Admin\LatestAnnouncementsInfoController::class, ["as" => 'admin']);
+        Route::resource('pdfFileDownloadInfos', App\Http\Controllers\Admin\PdfFileDownloadInfoController::class, ["as" => 'admin']);
 
         Route::any('adminUsers', [App\Http\Controllers\Admin\AdminAccountController::class, 'index'])->name('admin.adminUsers.index');
         Route::any('adminUsers/create', [App\Http\Controllers\Admin\AdminAccountController::class, 'create'])->name('admin.adminUsers.create');
@@ -133,3 +131,58 @@ Route::prefix('admin')->group(function () {
         Route::any('adminUsers/destroy/{id}', [App\Http\Controllers\Admin\AdminAccountController::class, 'destroy'])->name('admin.adminUsers.destroy');
     });
 });
+
+// Route::resource('admin/cable-tv-promotions-infos', App\Http\Controllers\Admin\CableTvPromotionsInfoController::class)
+//     ->names([
+//         'index' => 'admin.cableTvPromotionsInfos.index',
+//         'store' => 'admin.cableTvPromotionsInfos.store',
+//         'show' => 'admin.cableTvPromotionsInfos.show',
+//         'update' => 'admin.cableTvPromotionsInfos.update',
+//         'destroy' => 'admin.cableTvPromotionsInfos.destroy',
+//         'create' => 'admin.cableTvPromotionsInfos.create',
+//         'edit' => 'admin.cableTvPromotionsInfos.edit'
+//     ]);
+
+// Route::resource('admin/internet-promotions-infos', App\Http\Controllers\Admin\InternetPromotionsInfoController::class)
+//     ->names([
+//         'index' => 'admin.internetPromotionsInfos.index',
+//         'store' => 'admin.internetPromotionsInfos.store',
+//         'show' => 'admin.internetPromotionsInfos.show',
+//         'update' => 'admin.internetPromotionsInfos.update',
+//         'destroy' => 'admin.internetPromotionsInfos.destroy',
+//         'create' => 'admin.internetPromotionsInfos.create',
+//         'edit' => 'admin.internetPromotionsInfos.edit'
+//     ]);
+
+// Route::resource('admin/latest-announcements-infos', App\Http\Controllers\Admin\LatestAnnouncementsInfoController::class)
+//     ->names([
+//         'index' => 'admin.latestAnnouncementsInfos.index',
+//         'store' => 'admin.latestAnnouncementsInfos.store',
+//         'show' => 'admin.latestAnnouncementsInfos.show',
+//         'update' => 'admin.latestAnnouncementsInfos.update',
+//         'destroy' => 'admin.latestAnnouncementsInfos.destroy',
+//         'create' => 'admin.latestAnnouncementsInfos.create',
+//         'edit' => 'admin.latestAnnouncementsInfos.edit'
+//     ]);
+
+// Route::resource('admin/pdf-file-download-infos', App\Http\Controllers\Admin\PdfFileDownloadInfoController::class)
+//     ->names([
+//         'index' => 'admin.pdfFileDownloadInfos.index',
+//         'store' => 'admin.pdfFileDownloadInfos.store',
+//         'show' => 'admin.pdfFileDownloadInfos.show',
+//         'update' => 'admin.pdfFileDownloadInfos.update',
+//         'destroy' => 'admin.pdfFileDownloadInfos.destroy',
+//         'create' => 'admin.pdfFileDownloadInfos.create',
+//         'edit' => 'admin.pdfFileDownloadInfos.edit'
+//     ]);
+
+Route::resource('admin/repair-infos', App\Http\Controllers\Admin\RepairInfoController::class)
+    ->names([
+        'index' => 'admin.repairInfos.index',
+        'store' => 'admin.repairInfos.store',
+        'show' => 'admin.repairInfos.show',
+        'update' => 'admin.repairInfos.update',
+        'destroy' => 'admin.repairInfos.destroy',
+        'create' => 'admin.repairInfos.create',
+        'edit' => 'admin.repairInfos.edit'
+    ]);

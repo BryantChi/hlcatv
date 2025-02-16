@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                        編輯數位節目表
+                        新增優惠方案
                     </h1>
                 </div>
             </div>
@@ -19,17 +19,19 @@
 
         <div class="card">
 
-            {!! Form::model($ePGInfo, ['route' => ['admin.ePGInfos.update', $ePGInfo->id], 'method' => 'patch', 'files' => true]) !!}
+            {!! Form::open(['route' => 'admin.internetPromotionsInfos.store', 'files' => true]) !!}
 
             <div class="card-body">
+
                 <div class="row">
-                    @include('admin.e_p_g_infos.fields')
+                    @include('admin.internet_promotions_infos.fields')
                 </div>
+
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('儲存', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('admin.ePGInfos.index') }}" class="btn btn-default"> 取消 </a>
+                <a href="{{ route('admin.internetPromotionsInfos.index') }}" class="btn btn-default"> 取消 </a>
             </div>
 
             {!! Form::close() !!}
