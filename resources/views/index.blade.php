@@ -140,46 +140,19 @@
                     <hr>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box">
-                            <img src="{{asset('assets/img/00-hp/board_pic1.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>113/08/30施工公告</h5>
-                            <p>2024-08-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
+                    @foreach ($announcementsInfos ?? [] as $announcementsInfo)
+                        <div class="col-lg-3 mb-4">
+                            <div class="news-slide-box">
+                                <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $announcementsInfo->cover_front_image }}" class="img-fluid mb-4" alt="">
+                                <h5>{{ $announcementsInfo->title }}</h5>
+                                <p>{{ \Carbon\Carbon::parse($announcementsInfo->created_at)->format('Y-m-d') }}</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="{{ route('latest-announcements-details', [$announcementsInfo->id]) }}" class="btn-news-slide-details">觀看詳情 ＋</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box">
-                            <img src="{{asset('assets/img/00-hp/board_pic2.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>台電花蓮區營業處停電作業告</h5>
-                            <p>2021-08-19</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box">
-                            <img src="{{asset('assets/img/00-hp/board_pic3.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>113/08/30施工公告</h5>
-                            <p>2024-08-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box">
-                            <img src="{{asset('assets/img/00-hp/board_pic4.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>台電花蓮區營業處停電作業</h5>
-                            <p>2021-08-1</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>

@@ -23,23 +23,29 @@
                         <div class="col-auto file-content-title">標題</div>
                         <div class="col-auto file-content-title">檔案</div>
                     </div>
+                    @foreach ($pdfFileDownloadInfos ?? [] as $pdfFile)
                     <div
+                        class="col-lg-11 row d-flex justify-content-between align-items-center px-lg-5 px-3 py-3 file-content-item">
+                        <div class="col">{{ $pdfFile->file_name }}</div>
+                        <div class="col-auto">
+                            <a href="{{ env('APP_URL', 'http://hlcatv.com.tw') . '/uploads/' . $pdfFile->file }}" download><img src="{{asset('assets/img/downloads/file.jpg')}}"
+                                    class="img-fluid" width="30" alt=""></a>
+                        </div>
+                    </div>
+                    @endforeach
+                    {{-- <div
                         class="col-lg-11 row d-flex justify-content-between align-items-center px-lg-5 px-3 py-3 file-content-item">
                         <div class="col">113-01-洄瀾如何善用人工智慧提升競爭力</div>
                         <div class="col-auto">
                             <a href="{{asset('assets/file/113-01-洄瀾如何善用人工智慧提升競爭力.docx')}}" download><img src="{{asset('assets/img/downloads/file.jpg')}}"
                                     class="img-fluid" width="30" alt=""></a>
                         </div>
-                    </div>
-                    <div
-                        class="col-lg-11 row d-flex justify-content-between align-items-center px-lg-5 px-3 py-3 file-content-item">
-                        <div class="col">113-05-洄瀾媒體在宣傳和推動身障者補助措施方面扮演著重要角色</div>
-                        <div class="col-auto">
-                            <a href="{{asset('assets/file/113-05-洄瀾媒體在宣傳和推動身障者補助措施方面扮演著重要角色.docx')}}" download><img src="{{asset('assets/img/downloads/file.jpg')}}"
-                                    class="img-fluid" width="30" alt=""></a>
-                        </div>
-                    </div>
+                    </div> --}}
 
+                </div>
+
+                <div class="overflow-auto mb-3">
+                    {{ $pdfFileDownloadInfos->onEachSide(3)->links('layouts_main.custom-pagination') }}
                 </div>
             </div>
 

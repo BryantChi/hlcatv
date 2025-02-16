@@ -23,18 +23,12 @@
                         <div class="announcements-header-line"></div>
 
                         <div class="announcements-header mx-3 my-3 py-3 px-3 text-center">
-                            <h5>美崙部份地區，斷訊通知</h5>
-                            <p class="text-gray" style="font-size:14px">發布日期：2024-08-27</p>
+                            <h5>{{ $announcementInfo->title }}</h5>
+                            <p class="text-gray" style="font-size:14px">發布日期：{{ \Carbon\Carbon::parse($announcementInfo->created_at)->format('Y-m-d') }}</p>
                         </div>
 
                         <div class="announcements-content text-center mt-3 py-3">
-                            <img src="{{asset('assets/img/03/03pic.jpg')}}" class="img-fluid" alt="">
-
-                            <p class="mt-4">
-                                美侖部份地區，因為車禍事故電桿斷倒造成本公司附掛光纖主幹線斷纜！<br>
-                                影響用戶收視區域包括：美工路、美工六街、華西路、精美路、七星、明潭、華德。<br>
-                                目前工程人員全力搶修，在此致上十二萬分歉意
-                            </p>
+                            {!! $announcementInfo->content !!}
                         </div>
                     </div>
 

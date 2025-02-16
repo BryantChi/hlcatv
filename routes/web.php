@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\AnnouncementsController;
+use App\Http\Controllers\EPGController;
+use App\Http\Controllers\FileDownloadsController;
+use App\Http\Controllers\InternetPromotionsController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RepairController;
+use App\Http\Controllers\TvPromotionsController;
+use App\Repositories\Admin\SeoSettingRepository;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -33,60 +40,40 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/faq', function () {
-    return view('faq');
+    $seoInfo = SeoSettingRepository::getInfo('/faq');
+    return view('faq')->with('seoInfo', $seoInfo);
 })->name('faq');
 
 Route::get('/legal-rules', function () {
-    return view('legal-rules');
+    $seoInfo = SeoSettingRepository::getInfo('/legal-rules');
+    return view('legal-rules')->with('seoInfo', $seoInfo);
 })->name('legal-rules');
 
 Route::get('/payment-methods', function () {
-    return view('payment-methods');
+    $seoInfo = SeoSettingRepository::getInfo('/payment-methods');
+    return view('payment-methods')->with('seoInfo', $seoInfo);
 })->name('payment-methods');
 
 Route::get('/repair', function () {
-    return view('repair');
+    $seoInfo = SeoSettingRepository::getInfo('/repair');
+    return view('repair')->with('seoInfo', $seoInfo);
 })->name('repair');
 
-Route::get('/downloads', function () {
-    return view('downloads');
-})->name('downloads');
+Route::get('/downloads', [FileDownloadsController::class, 'index'])->name('downloads');
 
-Route::get('/news', function () {
-    return view('news');
-})->name('news');
+Route::any('/news', [NewsController::class, 'index'])->name('news');
+Route::any('/news-details/{id}', [NewsController::class, 'detail'])->name('news-details');
 
-Route::get('/news-details', function () {
-    return view('news-details');
-})->name('news-details');
+Route::any('/latest-announcements', [AnnouncementsController::class, 'index'])->name('latest-announcements');
+Route::any('/latest-announcements-details/{id}', [AnnouncementsController::class, 'detail'])->name('latest-announcements-details');
 
-Route::get('/latest-announcements-details', function () {
-    return view('latest-announcements-details');
-})->name('latest-announcements-details');
+Route::any('/cable-tv-promotions', [TvPromotionsController::class, 'index'])->name('cable-tv-promotions');
+Route::any('/cable-tv-promotions-details/{id}', [TvPromotionsController::class, 'detail'])->name('cable-tv-promotions-details');
 
-Route::get('/latest-announcements', function () {
-    return view('latest-announcements');
-})->name('latest-announcements');
+Route::any('/internet-promotions', [InternetPromotionsController::class, 'index'])->name('internet-promotions');
+Route::any('/internet-promotions-details/{id}', [InternetPromotionsController::class, 'detail'])->name('internet-promotions-details');
 
-Route::get('/cable-tv-promotions', function () {
-    return view('cable-tv-promotions');
-})->name('cable-tv-promotions');
-
-Route::get('/cable-tv-promotions-details', function () {
-    return view('cable-tv-promotions-details');
-})->name('cable-tv-promotions-details');
-
-Route::get('/internet-promotions', function () {
-    return view('internet-promotions');
-})->name('internet-promotions');
-
-Route::get('/internet-promotions-details', function () {
-    return view('internet-promotions-details');
-})->name('internet-promotions-details');
-
-Route::get('/epg', function () {
-    return view('epg');
-})->name('epg');
+Route::get('/epg', [EPGController::class, 'index'])->name('epg');
 
 Route::post('/repairs', [RepairController::class, 'store'])->name('repairs.store');
 

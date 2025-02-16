@@ -18,8 +18,8 @@
 
                 <div class="row justify-content-center align-items-center mb-5 epg-section">
                     <div class="col-lg-11 row d-flex justify-content-between align-items-center px-lg-5 px-3 py-3">
-                        <a href="{{asset('assets/img/01/洄瀾節目表_page-0001.jpg')}}" data-fancybox="epg">
-                            <img src="{{asset('assets/img/01/洄瀾節目表_page-0001.jpg')}}" class="img-fluid epg-img" alt="">
+                        <a href="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . ($epgInfo->epg_img ?? '') }}" data-fancybox="epg">
+                            <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . ($epgInfo->epg_img ?? '') }}" class="img-fluid epg-img" alt="{{ $epgInfo->alt ?? '' }}">
                         </a>
                     </div>
                 </div>

@@ -18,153 +18,30 @@
 
                 <div class="row justify-content-center align-items-center mx-lg-auto mx-2 mt-4">
                     <div class="col-12 d-flex justify-content-end">
-                        <p class="text-gray" style="font-size: 14px;">共有9則最新消息</p>
+                        <p class="text-gray" style="font-size: 14px;">共有 {{ $newsInfos->total() ?? 0 }} 篇則最新消息</p>
                     </div>
 
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <a href="{{ route('news-details') }}">
-                                <img src="{{asset('assets/img/06/06pic1.jpg')}}" class="img-fluid mb-4" alt="">
-                                <h5>新增熱門頻道，娛樂更多元！</h5>
-                                <p>2024-11-27</p>
-                            </a>
+                    @foreach ($newsInfos as $news)
+                        <div class="col-lg-3 mb-4">
+                            <div class="news-slide-box border-bottom pb-3">
+                                <a href="{{ route('news-details', [$news->id]) }}">
+                                    <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $news->cover_front_image }}" class="img-fluid mb-4" alt="">
+                                    <h5>{{ $news->title }}</h5>
+                                    <p>{{ \Carbon\Carbon::parse($news->created_at)->format('Y-m-d') }}</p>
+                                </a>
 
-                            <div class="d-flex justify-content-end">
-                                <a href="{{ route('news-details') }}" class="btn-news-slide-details">觀看詳情 ＋</a>
+                                <div class="d-flex justify-content-end">
+                                    <a href="{{ route('news-details', [$news->id]) }}" class="btn-news-slide-details">觀看詳情 ＋</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic2.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic3.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic4.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <a href="javascript:void(0)">
-                                <img src="{{asset('assets/img/06/06pic1.jpg')}}" class="img-fluid mb-4" alt="">
-                                <h5>新增熱門頻道，娛樂更多元！</h5>
-                                <p>2024-11-27</p>
-                            </a>
-
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic2.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic3.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic4.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <a href="javascript:void(0)">
-                                <img src="{{asset('assets/img/06/06pic1.jpg')}}" class="img-fluid mb-4" alt="">
-                                <h5>新增熱門頻道，娛樂更多元！</h5>
-                                <p>2024-11-27</p>
-                            </a>
-
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic2.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic3.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-4">
-                        <div class="news-slide-box border-bottom pb-3">
-                            <img src="{{asset('assets/img/06/06pic4.jpg')}}" class="img-fluid mb-4" alt="">
-                            <h5>新增熱門頻道，娛樂更多元！</h5>
-                            <p>2024-11-27</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="javascript:void(0)" class="btn-news-slide-details">觀看詳情 ＋</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
 
+                </div>
 
-
+                <div class="overflow-auto mb-3">
+                    {{ $newsInfos->onEachSide(3)->links('layouts_main.custom-pagination') }}
                 </div>
 
             </div>
