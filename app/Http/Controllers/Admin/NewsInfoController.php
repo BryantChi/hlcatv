@@ -151,11 +151,13 @@ class NewsInfoController extends AppBaseController
         $newsInfo = $this->newsInfoRepository->find($id);
 
         if (empty($newsInfo)) {
-            dd(empty($newsInfo));
-            dd($newsInfo);
             Flash::error('News Info not found');
 
             return redirect(route('admin.newsInfos.index'));
+        }
+
+        if (File::exists(public_path('uploads/' . $newsInfo['cover_front_image']))) {
+            File::delete(public_path('uploads/' . $newsInfo['cover_front_image']));
         }
 
         $this->newsInfoRepository->delete($id);

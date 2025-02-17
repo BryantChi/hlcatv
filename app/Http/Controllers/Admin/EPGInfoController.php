@@ -127,6 +127,10 @@ class EPGInfoController extends AppBaseController
             return redirect(route('admin.ePGInfos.index'));
         }
 
+        if (File::exists(public_path('uploads/' . $ePGInfo['epg_img']))) {
+            File::delete(public_path('uploads/' . $ePGInfo['epg_img']));
+        }
+
         $this->ePGInfoRepository->delete($id);
 
         Flash::success('E P G Info deleted successfully.');

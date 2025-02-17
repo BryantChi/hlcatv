@@ -127,6 +127,10 @@ class InternetPromotionsInfoController extends AppBaseController
             return redirect(route('admin.internetPromotionsInfos.index'));
         }
 
+        if (File::exists(public_path('uploads/' . $internetPromotionsInfo['cover_front_image']))) {
+            File::delete(public_path('uploads/' . $internetPromotionsInfo['cover_front_image']));
+        }
+
         $this->internetPromotionsInfoRepository->delete($id);
 
         Flash::success('Internet Promotions Info deleted successfully.');

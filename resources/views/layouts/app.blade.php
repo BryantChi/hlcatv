@@ -21,9 +21,9 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <!-- User image -->
-                            <li class="user-header bg-primary">
+                            <li class="user-header bg-gray">
                                 <img src="{{ asset('assets/img/fimgs/icon128.png') }}"
-                                    class="img-circle elevation-2" alt="Logo">
+                                    class="img-circle elevation-2 bg-white" alt="Logo">
                                 <p>
                                     {{ Auth::user()->name }}
                                     <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>

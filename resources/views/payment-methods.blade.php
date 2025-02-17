@@ -23,16 +23,16 @@
                         <div class="bg-blue-light rounded-20 d-flex justify-content-center align-items-center py-lg-4 py-3 px-3 wow fadeIn"
                             data-wow-delay="0.1s">
                             <div class="text-center">
-                                <img src="img/04/04icon1.png" class="img-fluid" style="max-width: 120px;" alt="">
+                                <img src="{{asset('assets/img/04/04icon1.png')}}" class="img-fluid" style="max-width: 120px;" alt="">
                             </div>
                             <div class="">
                                 <h6>收費方式</h6>
                                 <p class="align-items-center">
-                                    <img src="{{('assets/img/04/04n1.png')}}" class="img-fluid" width="25" alt="">臨櫃
-                                    <img src="{{('assets/img/04/04n2.png')}}" class="img-fluid" width="25" alt="">到府收費
+                                    <img src="{{asset('assets/img/04/04n1.png')}}" class="img-fluid" width="25" alt="">臨櫃
+                                    <img src="{{asset('assets/img/04/04n2.png')}}" class="img-fluid" width="25" alt="">到府收費
                                     <br class="d-block d-md-none">
-                                    <img src="img/04/04n3.png" class="img-fluid" width="25" alt="">7-11帳單
-                                    <img src="img/04/04n4.png" class="img-fluid" width="25" alt="">ATM帳號
+                                    <img src="{{asset('assets/img/04/04n3.png')}}" class="img-fluid" width="25" alt="">7-11帳單
+                                    <img src="{{asset('assets/img/04/04n4.png')}}" class="img-fluid" width="25" alt="">ATM帳號
                                 </p>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                         <div class="bg-blue-light rounded-20 d-flex justify-content-center align-items-center py-lg-4 py-3 px-3 wow fadeIn"
                             data-wow-delay="0.1s">
                             <div class="text-center">
-                                <img src="img/04/04icon2.png" class="img-fluid" style="max-width: 120px;" alt="">
+                                <img src="{{asset('assets/img/04/04icon2.png')}}" class="img-fluid" style="max-width: 120px;" alt="">
                             </div>
                             <div class="">
                                 <h6>服務區域</h6>

@@ -129,6 +129,10 @@ class LatestAnnouncementsInfoController extends AppBaseController
             return redirect(route('admin.latestAnnouncementsInfos.index'));
         }
 
+        if (File::exists(public_path('uploads/' . $latestAnnouncementsInfo['cover_front_image']))) {
+            File::delete(public_path('uploads/' . $latestAnnouncementsInfo['cover_front_image']));
+        }
+
         $this->latestAnnouncementsInfoRepository->delete($id);
 
         Flash::success('Latest Announcements Info deleted successfully.');

@@ -127,6 +127,10 @@ class CableTvPromotionsInfoController extends AppBaseController
             return redirect(route('admin.cableTvPromotionsInfos.index'));
         }
 
+        if (File::exists(public_path('uploads/' . $cableTvPromotionsInfo['cover_front_image']))) {
+            File::delete(public_path('uploads/' . $cableTvPromotionsInfo['cover_front_image']));
+        }
+
         $this->cableTvPromotionsInfoRepository->delete($id);
 
         Flash::success('Cable Tv Promotions Info deleted successfully.');

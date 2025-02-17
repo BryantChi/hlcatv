@@ -23,12 +23,12 @@
                         <div class="news-header-line"></div>
 
                         <div class="news-header mx-3 my-3 py-3 px-3 text-center">
-                            <h5>{{ $news->title }}</h5>
-                            <p class="text-gray" style="font-size:14px">發布日期：{{ \Carbon\Carbon::parse($news->created_at)->format('Y-m-d') }}</p>
+                            <h5>{{ $newsInfo->title }}</h5>
+                            <p class="text-gray" style="font-size:14px">發布日期：{{ \Carbon\Carbon::parse($newsInfo->created_at)->format('Y-m-d') }}</p>
                         </div>
 
                         <div class="news-content text-center mt-3 py-3">
-                            {!! $news->content !!}
+                            {!! $newsInfo->content !!}
                         </div>
                     </div>
 
