@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
     @vite('resources/sass/app.scss')
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/app.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/app.css') }}" />
     @stack('third_party_stylesheets')
     @stack('page_css')
 
@@ -32,8 +32,8 @@
 {{ $slot }}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -69,13 +69,14 @@
 <script>
     function check(e) {
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: '是否刪除？',
+            text: "刪除後您將無法恢復！",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: '刪除',
+            cancelButtonText: '取消'
         }).then((result) => {
             if (result.isConfirmed) {
                 e.parentElement.parentElement.submit();
