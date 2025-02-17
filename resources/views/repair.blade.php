@@ -60,8 +60,7 @@
                                     <div class="col-12">
                                         <h5>電子信箱（可省略）：</h5>
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                                required>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                                             <label for="email">Email</label>
                                         </div>
                                     </div>

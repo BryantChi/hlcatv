@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\EPGController;
 use App\Http\Controllers\FileDownloadsController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\InternetPromotionsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RepairController;
@@ -35,9 +36,7 @@ Route::any('/clear-cache', function () {
     return redirect()->route('index');
 });
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/faq', function () {
     $seoInfo = SeoSettingRepository::getInfo('/faq');

@@ -31,7 +31,7 @@
 <!-- Status Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('status', '狀態:') !!}
-    <select name="status" id="status" class="form-control">
+    <select name="status" id="status" class="form-control" required>
         <option value="" selected>請選擇</option>
         <option value="1" {{ $newsInfo->status ?? '' == 1 ? 'selected' : '' }}>啟用</option>
         <option value="0" {{ $newsInfo->status ?? '' == 0 ? 'selected' : '' }}>停用</option>
