@@ -121,7 +121,7 @@ class RepairInfoController extends AppBaseController
 
         $this->repairInfoRepository->delete($id);
 
-        Flash::success('Repair Info deleted successfully.');
+        Flash::success('線上維修刪除成功。');
 
         return redirect(route('admin.repairInfos.index'));
     }

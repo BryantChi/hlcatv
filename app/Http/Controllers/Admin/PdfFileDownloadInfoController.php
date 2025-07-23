@@ -50,7 +50,7 @@ class PdfFileDownloadInfoController extends AppBaseController
 
         $pdfFileDownloadInfo = $this->pdfFileDownloadInfoRepository->create($input);
 
-        Flash::success('Pdf File Download Info saved successfully.');
+        Flash::success('檔案上傳成功。');
 
         return redirect(route('admin.pdfFileDownloadInfos.index'));
     }
@@ -104,9 +104,9 @@ class PdfFileDownloadInfoController extends AppBaseController
 
         $input['file'] = $this->handleFileUpload($request->file('file'), $pdfFileDownloadInfo['file'], 'pdf');
 
-        $pdfFileDownloadInfo = $this->pdfFileDownloadInfoRepository->update($request->all(), $id);
+        $pdfFileDownloadInfo = $this->pdfFileDownloadInfoRepository->update($input, $id);
 
-        Flash::success('Pdf File Download Info updated successfully.');
+        Flash::success('檔案更新成功。');
 
         return redirect(route('admin.pdfFileDownloadInfos.index'));
     }
@@ -132,7 +132,7 @@ class PdfFileDownloadInfoController extends AppBaseController
 
         $this->pdfFileDownloadInfoRepository->delete($id);
 
-        Flash::success('Pdf File Download Info deleted successfully.');
+        Flash::success('檔案刪除成功。');
 
         return redirect(route('admin.pdfFileDownloadInfos.index'));
     }

@@ -13,7 +13,7 @@ class TvPromotionsController extends Controller
     public function index()
     {
         $seoInfo = SeoSettingRepository::getInfo('/cable-tv-promotions');
-        $tvPromotions = CableTvPromotionsInfo::orderBy('created_at', 'desc')->paginate(10);
+        $tvPromotions = CableTvPromotionsInfo::where('status', 1)->orderBy('created_at', 'desc')->paginate(10);
         return view('cable-tv-promotions')
             ->with('seoInfo', $seoInfo)
             ->with('tvPromotions', $tvPromotions);

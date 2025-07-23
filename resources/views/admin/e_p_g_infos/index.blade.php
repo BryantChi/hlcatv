@@ -7,7 +7,7 @@
                 <div class="col-sm-6">
                     <h1>數位節目表</h1>
                 </div>
-                <div class="col-sm-6 {{ count($ePGInfos) > 1 ? 'd-none' : '' }}">
+                <div class="col-sm-6 {{ count($ePGInfos) > 0 ? 'd-none' : '' }}">
                     <a class="btn btn-primary float-right"
                        href="{{ route('admin.ePGInfos.create') }}">
                         <i class="fas fa-plus"></i>

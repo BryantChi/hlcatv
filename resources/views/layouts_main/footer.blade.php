@@ -83,23 +83,23 @@
 
             <div class="col-12 row justify-content-center mt-3">
                 <div class="col-lg-auto">
-                    <p class="text-white mb-0"><img src="img/00-hp/footer_rhombus.png" class="img-fluid me-2"
+                    <p class="text-white mb-0"><img src="{{asset('assets/img/00-hp/footer_rhombus.png')}}" class="img-fluid me-2"
                             alt="">櫃台服務時間：<br class="d-block d-lg-none">8:00~19:00</p>
                 </div>
                 <!-- <div class="col-auto p-0 m-0 d-none d-lg-block">|</div> -->
                 <div class="col-lg-auto">
-                    <p class="text-white mb-0"><img src="img/00-hp/footer_rhombus.png" class="img-fluid me-2"
+                    <p class="text-white mb-0"><img src="{{asset('assets/img/00-hp/footer_rhombus.png')}}" class="img-fluid me-2"
                             alt="">電話客服時間：<br class="d-block d-lg-none">8:00~21:00</p>
                 </div>
                 <!-- <div class="col-auto p-0 m-0 d-none d-lg-block">|</div> -->
                 <div class="col-lg-auto">
-                    <p class="text-white mb-0"><img src="img/00-hp/footer_rhombus.png" class="img-fluid me-2"
+                    <p class="text-white mb-0"><img src="{{asset('assets/img/00-hp/footer_rhombus.png')}}" class="img-fluid me-2"
                             alt=""> LINE、FB線上服務時間：<br class="d-block d-lg-none">8:30～17:30
                     </p>
                 </div>
                 <div class="col-12 text-center">
                     <p class="text-white">
-                        免付費客服專線：0800-529999 • 電話：03-8573777 • LINE ID：@381gjzdw<br>
+                        免付費客服專線：0800-529999 • 電話：03-8573777 • LINE ID：@381gjzdw • <a href="https://docs.google.com/document/d/e/2PACX-1vS9c-VSsfSayv0OzAdjnogyYFez7q7e4eXFoTkR9LTS3CdpZ_ajy1Aj6OSNOsFx_ki4qBTZXD9c3aF1/pub" target="_blank">隱私權條款</a><br>
                         傳真：03-8461842 • 地址：973花蓮縣吉安鄉吉安路一段135號 • 信箱：catv888@gmail.com
                     </p>
                 </div>

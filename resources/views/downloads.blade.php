@@ -28,7 +28,7 @@
                         class="col-lg-11 row d-flex justify-content-between align-items-center px-lg-5 px-3 py-3 file-content-item">
                         <div class="col">{{ $pdfFile->file_name }}</div>
                         <div class="col-auto">
-                            <a href="{{ env('APP_URL', 'http://hlcatv.com.tw') . '/uploads/' . $pdfFile->file }}" download><img src="{{asset('assets/img/downloads/file.jpg')}}"
+                            <a href="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $pdfFile->file }}" download><img src="{{asset('assets/img/downloads/file.jpg')}}"
                                     class="img-fluid" width="30" alt=""></a>
                         </div>
                     </div>

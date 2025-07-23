@@ -165,8 +165,10 @@
                     if (selectedCity) {
                         const cityData = data.find(city => city.name === selectedCity);
                         cityData.districts.forEach(function(district) {
-                            // 這裡將郵遞區號作為選項的值，以便選擇後顯示
-                            districtSelect.append(new Option(district.name, district.zip));
+                            // 這裡將郵遞區號作為選項data的值，以便選擇後顯示
+                            const option = new Option(district.name, district.name);
+                            $(option).attr('data-zip', district.zip);
+                            districtSelect.append(option);
                         });
                     }
 
@@ -176,7 +178,7 @@
 
                 // 當鄉鎮市區選單變更時，顯示對應的郵遞區號
                 $('#district').change(function() {
-                    const selectedZip = $(this).val();
+                    const selectedZip = $(this).find('option:selected').data('zip');
                     $('#zipcode').val(selectedZip); // 顯示選中的郵遞區號
                 });
             });

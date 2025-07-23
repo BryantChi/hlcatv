@@ -24,9 +24,9 @@
         <label class="custom-file-label" for="cover_front_image">Choose file</label>
     </div>
     <div class="img-preview-cover mt-2">
-        @if ($cableTvPromotionsInfo->cover_front_image ?? null)
+        @if ($latestAnnouncementsInfo->cover_front_image ?? null)
             <p for="">預覽</p>
-            <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $cableTvPromotionsInfo->cover_front_image }}"
+            <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $latestAnnouncementsInfo->cover_front_image }}"
                 style="max-width: 200px; max-height: 200px;">
         @endif
     </div>
@@ -37,10 +37,13 @@
 <div class="form-group col-sm-6">
     {!! Form::label('status', '狀態:') !!}
     {{-- {!! Form::text('status', null, ['class' => 'form-control']) !!} --}}
+    @php
+        $status = $latestAnnouncementsInfo->status ?? 1;
+    @endphp
     <select name="status" id="status" class="form-control" required>
         <option value="" selected>請選擇</option>
-        <option value="1" {{ $cableTvPromotionsInfo->status ?? '' == 1 ? 'selected' : '' }}>啟用</option>
-        <option value="0" {{ $cableTvPromotionsInfo->status ?? '' == 0 ? 'selected' : '' }}>停用</option>
+        <option value="1" {{ $status == 1 ? 'selected' : '' }}>啟用</option>
+        <option value="0" {{ $status == 0 ? 'selected' : '' }}>停用</option>
     </select>
 </div>
 

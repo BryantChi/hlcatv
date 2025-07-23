@@ -51,7 +51,7 @@ class InternetPromotionsInfoController extends AppBaseController
 
         $internetPromotionsInfo = $this->internetPromotionsInfoRepository->create($input);
 
-        Flash::success('Internet Promotions Info saved successfully.');
+        Flash::success('寬頻上網-優惠方案上傳成功。');
 
         return redirect(route('admin.internetPromotionsInfos.index'));
     }
@@ -105,9 +105,9 @@ class InternetPromotionsInfoController extends AppBaseController
 
         $input['cover_front_image'] = $this->handleImageUpload($request->file('cover_front_image'), $internetPromotionsInfo['cover_front_image'], 'cover_front_image');
 
-        $internetPromotionsInfo = $this->internetPromotionsInfoRepository->update($request->all(), $id);
+        $internetPromotionsInfo = $this->internetPromotionsInfoRepository->update($input, $id);
 
-        Flash::success('Internet Promotions Info updated successfully.');
+        Flash::success('寬頻上網-優惠方案更新成功。');
 
         return redirect(route('admin.internetPromotionsInfos.index'));
     }
@@ -133,7 +133,7 @@ class InternetPromotionsInfoController extends AppBaseController
 
         $this->internetPromotionsInfoRepository->delete($id);
 
-        Flash::success('Internet Promotions Info deleted successfully.');
+        Flash::success('寬頻上網-優惠方案刪除成功。');
 
         return redirect(route('admin.internetPromotionsInfos.index'));
     }

@@ -23,12 +23,12 @@
                         <div class="announcements-header-line"></div>
 
                         <div class="announcements-header mx-3 my-3 py-3 px-3 text-center">
-                            <h5>{{ $announcementInfo->title }}</h5>
-                            <p class="text-gray" style="font-size:14px">發布日期：{{ \Carbon\Carbon::parse($announcementInfo->created_at)->format('Y-m-d') }}</p>
+                            <h5>{{ $announcementsInfo->title }}</h5>
+                            <p class="text-gray" style="font-size:14px">發布日期：{{ \Carbon\Carbon::parse($announcementsInfo->created_at)->format('Y-m-d') }}</p>
                         </div>
 
                         <div class="announcements-content text-center mt-3 py-3">
-                            {!! $announcementInfo->content !!}
+                            {!! $announcementsInfo->content !!}
                         </div>
                     </div>
 

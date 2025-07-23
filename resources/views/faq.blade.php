@@ -37,8 +37,8 @@
                             <div class="faq-item-line"></div>
                             <div class="faq-item-a bg-blue-light rounded-20 px-4 py-3">
                                 <p class="mb-0">
-                                    1.花蓮市、吉安鄉、新城鄉之所有住戶。（秀林鄉部分地區，歡迎來電洽詢。）<br>
-                                    2.無安裝 CATV有線電視用戶，亦可申請。
+                                    1.吉安鄉、花蓮市、新城鄉所有用戶、秀林鄉部分用戶）<br>
+                                    2.網路申裝非CATV有線電視用戶，亦可申請
                                 </p>
                             </div>
                         </div>
@@ -58,9 +58,11 @@
                             <div class="faq-item-line"></div>
                             <div class="faq-item-a bg-blue-light rounded-20 px-4 py-3">
                                 <p class="mb-0">
-                                    1. 電話申請，申請專線 0800-529-999。<br>
+                                    1. 申請專線8573777、0800-529-999。<br>
                                     2. 傳真 至8461-842，請註明客戶名稱、聯絡電話、裝機地址即可。<br>
-                                    3. Email 至 catv888@gmail.com，請註明客戶名稱、聯絡電話、裝機地址即可。
+                                    3. Email 至 catv888@gmail.com，請註明客戶名稱、聯絡電話、裝機地址即可。<br>
+                                    4. 加入LINE，傳訊息 LINE ID@381gjzdw請註明客戶名稱、聯絡電話、裝機地址<br>
+                                    5. 上FB網站傳訊息，請註明客戶名稱、聯絡電話、裝機地址
                                 </p>
                             </div>
                         </div>
@@ -80,9 +82,9 @@
                             <div class="faq-item-line"></div>
                             <div class="faq-item-a bg-blue-light rounded-20 px-4 py-3">
                                 <p class="mb-0">
-                                    1. 由有線電視收費員到府收費, 亦有二信轉帳之繳費方式。<br>
-                                    2. 用戶可選擇(年繳送3個月優待)等繳費週期, 申請移轉補助費之用戶亦不限制繳法。<br>
-                                    3. 裝機時同時收取裝機費及第一次上網費(視用戶所選擇之繳費週期而定)。
+                                    1. 臨櫃繳費、ATM、二信櫃檯、收費員到府(部分區域)<br>
+                                    2. 用戶可選擇月繳、雙月繳、季繳、半年繳、年繳等繳費週期<br>
+                                    3. 裝機時同時收取裝機費及第一個月收視費及上網費(視用戶所選擇之繳費週期而定)。
                                 </p>
                             </div>
                         </div>
@@ -91,7 +93,7 @@
                     <div class="col-lg-12 mb-3 px-0">
                         <div class="faq-item-box px-3">
                             <div class="faq-item-q d-flex justify-content-between align-items-center">
-                                <h5><span class="text-blue-light me-1">4.</span>複訊費</h5>
+                                <h5><span class="text-blue-light me-1">4.</span>復機費</h5>
                                 <span class="faq-item-arrow-d">
                                     <img src="{{asset('assets/img/04/04qaicon1.png')}}" width="50" alt="">
                                 </span>
@@ -102,8 +104,8 @@
                             <div class="faq-item-line"></div>
                             <div class="faq-item-a bg-blue-light rounded-20 px-4 py-3">
                                 <p class="mb-0">
-                                    1. 未繳下期費用停訊後，復訊手續費100元/次。
-                                    2. 辦理暫時停機之復訊費100元/次。
+                                    1. 有線電視辦理暫時停機，三個月內復機，復機費優，超過三個月視同新裝機
+                                    2. 網路未繳當期費用停訊，或辦理暫時停訊後復訊，復機費$100元/次
                                 </p>
                             </div>
                         </div>
@@ -129,26 +131,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12 mb-3 px-0">
-                        <div class="faq-item-box px-3">
-                            <div class="faq-item-q d-flex justify-content-between align-items-center">
-                                <h5><span class="text-blue-light me-1">6.</span>設備賠償</h5>
-                                <span class="faq-item-arrow-d">
-                                    <img src="{{asset('assets/img/04/04qaicon1.png')}}" width="50" alt="">
-                                </span>
-                                <span class="faq-item-arrow-p d-none">
-                                    <img src="{{asset('assets/img/04/04qaicon2.png')}}" width="50" alt="">
-                                </span>
-                            </div>
-                            <div class="faq-item-line"></div>
-                            <div class="faq-item-a bg-blue-light rounded-20 px-4 py-3">
-                                <p class="mb-0">
-                                    纜線數據機1500元/台<br>
-                                    電源變壓器350/個
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
 
 
                     <div class="col-12 bg-gray rounded-20 py-3 px-3 text-center my-4">

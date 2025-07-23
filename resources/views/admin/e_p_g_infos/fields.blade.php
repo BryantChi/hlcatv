@@ -1,8 +1,9 @@
 <!-- Epg Img Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('epg_img', '圖片:') !!}
+    {!! Form::textarea('epg_img', null, ['class' => 'form-control', 'id' => 'contents']) !!}
     {{-- {!! Form::text('epg_img', null, ['class' => 'form-control']) !!} --}}
-    <div class="custom-file">
+    {{-- <div class="custom-file">
         <input type="file" class="custom-file-input" id="epg_img" name="epg_img" accept="image/*">
         <label class="custom-file-label" for="epg_img">Choose file</label>
     </div>
@@ -12,7 +13,7 @@
             <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $ePGInfo->epg_img }}"
                 style="max-width: 200px; max-height: 200px;">
         @endif
-    </div>
+    </div> --}}
 </div>
 
 <!-- Alt Field -->
@@ -30,7 +31,7 @@
     <script src="{!! asset('vendor/tinymce/js/tinymce/tinymce.js') !!}"></script>
 @endpush
 @push('page_scripts')
-<script src="{{ asset('assets/admin/js/news.js') }}" referrerpolicy="no-referrer"></script>
+<script src="{{ asset('assets/admin/js/epg.js') }}" referrerpolicy="no-referrer"></script>
 <script>
     $(document).ready(function() {
         $(document).on('change', '#epg_img', function () {

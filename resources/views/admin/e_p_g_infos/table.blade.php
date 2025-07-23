@@ -3,7 +3,7 @@
         <table class="table" id="e-p-g-infos-table">
             <thead>
             <tr>
-                <th>數位節目表</th>
+                <th>ID</th>
                 <th>alt</th>
                 <th>操作</th>
             </tr>
@@ -12,7 +12,8 @@
             @foreach($ePGInfos as $ePGInfo)
                 <tr>
                     <td>
-                        <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $ePGInfo->epg_img }}" style="max-width: 200px; max-height: 200px;" alt="">
+                        {{-- <img src="{{ env('APP_URL', 'https://hlcatv.com.tw') . '/uploads/' . $ePGInfo->epg_img }}" style="max-width: 200px; max-height: 200px;" alt=""> --}}
+                        {{ $ePGInfo->id }}
                     </td>
                     <td>{{ $ePGInfo->alt }}</td>
                     <td  style="width: 120px">

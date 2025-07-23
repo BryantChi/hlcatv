@@ -13,6 +13,7 @@
                 <th>郵遞區號</th>
                 <th>地址</th>
                 <th>狀況說明</th>
+                <th>報修時間</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -29,6 +30,7 @@
                     <td>{{ $repairInfo->zipcode }}</td>
                     <td>{{ $repairInfo->address }}</td>
                     <td>{{ $repairInfo->message }}</td>
+                    <td>{{ \Carbon\Carbon::parse($repairInfo->created_at)->format('Y-m-d H:i:s') }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['admin.repairInfos.destroy', $repairInfo->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

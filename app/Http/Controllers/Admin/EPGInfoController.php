@@ -47,11 +47,11 @@ class EPGInfoController extends AppBaseController
     {
         $input = $request->all();
 
-        $input['epg_img'] = $this->processImage($request->file('epg_img'), 'epg_img');
+        // $input['epg_img'] = $this->processImage($request->file('epg_img'), 'epg_img');
 
         $ePGInfo = $this->ePGInfoRepository->create($input);
 
-        Flash::success('E P G Info saved successfully.');
+        Flash::success('數位節目表上傳成功。');
 
         return redirect(route('admin.ePGInfos.index'));
     }
@@ -103,11 +103,11 @@ class EPGInfoController extends AppBaseController
 
         $input = $request->all();
 
-        $input['epg_img'] = $this->handleImageUpload($request->file('epg_img'), $ePGInfo['epg_img'], 'epg_img');
+        // $input['epg_img'] = $this->handleImageUpload($request->file('epg_img'), $ePGInfo['epg_img'], 'epg_img');
 
         $ePGInfo = $this->ePGInfoRepository->update($input, $id);
 
-        Flash::success('E P G Info updated successfully.');
+        Flash::success('數位節目表更新成功。');
 
         return redirect(route('admin.ePGInfos.index'));
     }
@@ -127,13 +127,13 @@ class EPGInfoController extends AppBaseController
             return redirect(route('admin.ePGInfos.index'));
         }
 
-        if (File::exists(public_path('uploads/' . $ePGInfo['epg_img']))) {
-            File::delete(public_path('uploads/' . $ePGInfo['epg_img']));
-        }
+        // if (File::exists(public_path('uploads/' . $ePGInfo['epg_img']))) {
+        //     File::delete(public_path('uploads/' . $ePGInfo['epg_img']));
+        // }
 
         $this->ePGInfoRepository->delete($id);
 
-        Flash::success('E P G Info deleted successfully.');
+        Flash::success('數位節目表刪除成功。');
 
         return redirect(route('admin.ePGInfos.index'));
     }

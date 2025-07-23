@@ -789,7 +789,7 @@ p {
     bottom: 0;
     background-image: url(../img/01/01-1bg750.jpg);
     /* height: 100vw; */
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center top;
     /* min-height: 100vw;  */
     /* height: 100%; */

@@ -48,7 +48,7 @@ class AdminAccountController extends AppBaseController
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
-        Flash::success('User created successfully.');
+        Flash::success('使用者帳號建立成功。');
         return redirect(route('admin.adminUsers.index'));
     }
 
@@ -81,7 +81,7 @@ class AdminAccountController extends AppBaseController
 
         $user->update($input);
 
-        Flash::success('User updated successfully.');
+        Flash::success('使用者帳號更新成功。');
         return redirect(route('admin.adminUsers.index'));
     }
 
@@ -93,7 +93,7 @@ class AdminAccountController extends AppBaseController
             return redirect(route('admin.adminUsers.index'));
         }
         $user->delete();
-        Flash::success('User deleted successfully.');
+        Flash::success('使用者帳號刪除成功。');
         return redirect(route('admin.adminUsers.index'));
     }
 

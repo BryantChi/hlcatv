@@ -65,7 +65,7 @@ class SeoSettingController extends AppBaseController
 
         $seoSetting = $this->seoSettingRepository->create($input);
 
-        Flash::success('Seo Setting saved successfully.');
+        Flash::success('SEO設定儲存成功。');
 
         return redirect(route('admin.seoSettings.index'));
     }
@@ -130,7 +130,7 @@ class SeoSettingController extends AppBaseController
 
         $seoSetting = $this->seoSettingRepository->update($request->all(), $id);
 
-        Flash::success('Seo Setting updated successfully.');
+        Flash::success('SEO設定更新成功。');
 
         return redirect(route('admin.seoSettings.index'));
     }
@@ -156,7 +156,7 @@ class SeoSettingController extends AppBaseController
 
         $this->seoSettingRepository->delete($id);
 
-        Flash::success('Seo Setting deleted successfully.');
+        Flash::success('SEO設定刪除成功。');
 
         return redirect(route('admin.seoSettings.index'));
     }

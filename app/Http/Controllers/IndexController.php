@@ -12,7 +12,7 @@ class IndexController extends Controller
     public function index()
     {
         $seoInfo = SeoSettingRepository::getInfo('/*');
-        $announcementsInfos = LatestAnnouncementsInfo::orderBy('created_at', 'desc')->limit(4)->get();
+        $announcementsInfos = LatestAnnouncementsInfo::where('status', 1)->orderBy('created_at', 'desc')->limit(4)->get();
         return view('index')
             ->with('seoInfo', $seoInfo)
             ->with('announcementsInfos', $announcementsInfos);

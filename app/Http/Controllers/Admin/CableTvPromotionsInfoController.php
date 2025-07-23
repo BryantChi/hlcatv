@@ -51,7 +51,7 @@ class CableTvPromotionsInfoController extends AppBaseController
 
         $cableTvPromotionsInfo = $this->cableTvPromotionsInfoRepository->create($input);
 
-        Flash::success('Cable Tv Promotions Info saved successfully.');
+        Flash::success('數位有線電視-優惠方案上傳成功。');
 
         return redirect(route('admin.cableTvPromotionsInfos.index'));
     }
@@ -107,7 +107,7 @@ class CableTvPromotionsInfoController extends AppBaseController
 
         $cableTvPromotionsInfo = $this->cableTvPromotionsInfoRepository->update($input, $id);
 
-        Flash::success('Cable Tv Promotions Info updated successfully.');
+        Flash::success('數位有線電視-優惠方案更新成功。');
 
         return redirect(route('admin.cableTvPromotionsInfos.index'));
     }
@@ -133,7 +133,7 @@ class CableTvPromotionsInfoController extends AppBaseController
 
         $this->cableTvPromotionsInfoRepository->delete($id);
 
-        Flash::success('Cable Tv Promotions Info deleted successfully.');
+        Flash::success('數位有線電視-優惠方案刪除成功。');
 
         return redirect(route('admin.cableTvPromotionsInfos.index'));
     }

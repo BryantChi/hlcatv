@@ -63,7 +63,7 @@ class NewsInfoController extends AppBaseController
 
         $newsInfo = $this->newsInfoRepository->create($input);
 
-        Flash::success('News Info saved successfully.');
+        Flash::success('最新消息上傳成功。');
 
         return redirect(route('admin.newsInfos.index'));
     }
@@ -132,7 +132,7 @@ class NewsInfoController extends AppBaseController
 
         $newsInfo = $this->newsInfoRepository->update($input, $id);
 
-        Flash::success('News Info updated successfully.');
+        Flash::success('最新消息更新成功。');
 
         return redirect(route('admin.newsInfos.index'));
     }
@@ -162,7 +162,7 @@ class NewsInfoController extends AppBaseController
 
         $this->newsInfoRepository->delete($id);
 
-        Flash::success('News Info deleted successfully.');
+        Flash::success('最新消息刪除成功。');
 
         return redirect(route('admin.newsInfos.index'));
     }

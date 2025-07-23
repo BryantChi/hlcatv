@@ -11,7 +11,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $seoInfo->og_title ?? '' }}" />
     <meta property="og:description" content="{{ $seoInfo->og_discription ?? '' }}" />
-    <meta property="og:image" content="{{ asset('assets/images/fimgs/fbimg.jpg') }}" />
+    <meta property="og:image" content="{{ asset('assets/img/fimgs/fbimg.jpg') }}" />
     <meta property="og:url" content="{{ url()->full() }}" />
     <meta property="og:site_name" content="{{ $seoInfo->og_site_name ?? '洄瀾有線電視' }}" />
     <title>{{ $seoInfo->title ?? '洄瀾有線電視' }}</title>
@@ -70,13 +70,13 @@
     <!-- Back to Top -->
     <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a> -->
     <a href="#" class="rounded-circle back-to-top">
-        <img src="img/00-hp/top.png" class="img-fluid" style="width: 50px;" alt="">
+        <img src="{{asset('assets/img/00-hp/top.png')}}" class="img-fluid" style="width: 50px;" alt="">
     </a>
 
     <div class="d-none d-md-block social-links-btn">
-        <a href="http://nav.cx/dZXcK8X" target="_blank" class="d-none d-md-block"><img src="img/00-hp/left_line.png" class="img-fluid left-line-img"
+        <a href="http://nav.cx/dZXcK8X" target="_blank" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_line.png')}}" class="img-fluid left-line-img"
                 alt=""></a>
-        <a href="https://www.facebook.com/messages/t/123936537638525" target="_blank" class="d-none d-md-block"><img src="img/00-hp/left_mes.png" class="img-fluid left-msg-img"
+        <a href="https://www.facebook.com/messages/t/123936537638525" target="_blank" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_mes.png')}}" class="img-fluid left-msg-img"
                 alt=""></a>
     </div>
 

@@ -47,13 +47,11 @@ class LatestAnnouncementsInfoController extends AppBaseController
     {
         $input = $request->all();
 
-        dd($request->all());
-
         $input['cover_front_image'] = $this->processImage($request->file('cover_front_image'), 'cover_front_image');
 
         $latestAnnouncementsInfo = $this->latestAnnouncementsInfoRepository->create($input);
 
-        Flash::success('Latest Announcements Info saved successfully.');
+        Flash::success('最新公告上傳成功。');
 
         return redirect(route('admin.latestAnnouncementsInfos.index'));
     }
@@ -107,9 +105,9 @@ class LatestAnnouncementsInfoController extends AppBaseController
 
         $input['cover_front_image'] = $this->handleImageUpload($request->file('cover_front_image'), $latestAnnouncementsInfo['cover_front_image'], 'cover_front_image');
 
-        $latestAnnouncementsInfo = $this->latestAnnouncementsInfoRepository->update($request->all(), $id);
+        $latestAnnouncementsInfo = $this->latestAnnouncementsInfoRepository->update($input, $id);
 
-        Flash::success('Latest Announcements Info updated successfully.');
+        Flash::success('最新公告更新成功。');
 
         return redirect(route('admin.latestAnnouncementsInfos.index'));
     }
@@ -135,7 +133,7 @@ class LatestAnnouncementsInfoController extends AppBaseController
 
         $this->latestAnnouncementsInfoRepository->delete($id);
 
-        Flash::success('Latest Announcements Info deleted successfully.');
+        Flash::success('最新公告刪除成功。');
 
         return redirect(route('admin.latestAnnouncementsInfos.index'));
     }

@@ -12,7 +12,7 @@ class AnnouncementsController extends Controller
     public function index()
     {
         $seoInfo = SeoSettingRepository::getInfo('/latest-announcements');
-        $announcementsInfos = LatestAnnouncementsInfo::orderBy('created_at', 'desc')->paginate(10);
+        $announcementsInfos = LatestAnnouncementsInfo::where('status', 1)->orderBy('created_at', 'desc')->paginate(10);
         return view('latest-announcements')
             ->with('seoInfo', $seoInfo)
             ->with('announcementsInfos', $announcementsInfos);

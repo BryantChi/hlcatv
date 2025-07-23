@@ -13,7 +13,7 @@ class InternetPromotionsController extends Controller
     public function index()
     {
         $seoInfo = SeoSettingRepository::getInfo('/internet-promotions');
-        $internetPromotions = InternetPromotionsInfo::orderBy('created_at', 'desc')->paginate(10);
+        $internetPromotions = InternetPromotionsInfo::where('status', 1)->orderBy('created_at', 'desc')->paginate(10);
         return view('internet-promotions')
             ->with('seoInfo', $seoInfo)
             ->with('internetPromotions', $internetPromotions);
